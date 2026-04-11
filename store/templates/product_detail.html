@@ -1,0 +1,32 @@
+
+
+{% extends 'base.html'%}
+{% block content %}
+{% load static %}
+
+<div class="product-detail">
+    {% if msg %}
+    <p>{{msg}}</p>
+    {% endif %}
+
+    <!-- IMAGE -->
+    <div class="detail-image">
+        <img src="{{ data.image.url }}" alt="">
+    </div>
+
+    <!-- INFO -->
+    <div class="detail-info">
+        <h1>{{data.name}}</h1>
+        <h2>{{data.price}}</h2>
+
+        <p><strong>Description:</strong> Research Rabbit is a powerful discovery app designed for researchers. It helps users visualise networks of academic papers and co-authorships, making it easier to discover relevant literature and track research trends. The platform allows users to create and share collections of papers, receive personalised recommendations, and collaborate with others. Research Rabbit aims to streamline the research process and enhance collaboration within the academic community.</p>
+        <p><strong>Material:</strong> 100% Cotton</p>
+        <p><strong>Fit:</strong> Comfortable & breathable</p>
+        <p><strong>Wash Care:</strong> Machine wash</p>
+
+        <a href="{% url 'store:con_with_subject' data.name %}" class="view-btn">View Product</a>
+    </div>
+
+</div>
+
+{% endblock %}

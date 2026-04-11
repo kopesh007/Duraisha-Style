@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+<!-- LINK ABOUT CSS -->
+<link rel="stylesheet" href="{% static 'about.css' %}">
+
+<!-- HERO -->
+<section class="about-hero">
+    <div class="about-hero-content">
+        <h2>DURAISHA STYLE</h2>
+        <p>Elegance • Trust • Since 2000</p>
+        <p><p>
+Duraisha Style is not just a fashion brand — it is a journey built on passion, perseverance, and trust. 
+Over the past 25 years, we have grown from a humble beginning into a name that represents elegance, 
+quality, and reliability.
+
+Our journey started with a simple vision: to create clothing that not only looks beautiful but also 
+makes people feel confident and empowered. With every passing year, we have refined our craft, 
+understood our customers better, and evolved with changing trends while staying true to our core values.
+
+Today, Duraisha Style stands as a symbol of trust and excellence, proudly serving thousands of customers 
+who believe in our commitment to quality and design.
+</p></p>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section class="about-section">
+
+    <!-- STORY -->
+    <div class="about-card">
+        <div class="about-image-box">
+            <img src="{{ p1.image.url }}" alt="Our Story">
+        </div>
+        <div class="about-content">
+            <h2>Our Story</h2>
+            <p>
+                Doresha Style has been delivering premium fashion for over 25 years.
+                Built on trust and quality, we have grown into a brand that people rely on.
+                Our journey began with a simple vision: to create clothing that not only l
+                ooks beautiful but also makes people feel confident and empowered. Over 
+                the years, we have refined our craft, understood our customers deeply, 
+                and adapted to changing trends while staying true to our core values.
+            </p>
+        </div>
+    </div>
+
+    <!-- QUALITY -->
+    <div class="about-card reverse">
+        <div class="about-image-box">
+            <img src="{{ p2.image.url }}" alt="Our Quality">
+        </div>
+        <div class="about-content">
+            <h2>Our Quality</h2>
+            <p>
+                We focus on premium fabrics and modern design to ensure every product
+                reflects elegance and comfort.
+                Doresha Style has been delivering premium fashion for over 25 years.
+                Built on trust and quality, we have grown into a brand that people rely on.
+                Our journey began with a simple vision: to create clothing that not only l
+                ooks beautiful but also makes people feel confident and empowered. Over 
+                the years, we have refined our craft, understood our customers deeply, 
+                and adapted to changing trends while staying true to our core values.
+            </p>
+        </div>
+    </div>
+
+</section>
+
+<!-- TRUST -->
+<section class="about-trust">
+
+    <div class="about-trust-box">
+        <h3>25+</h3>
+        <p>Years Experience</p>
+    </div>
+
+    <div class="about-trust-box">
+        <h3>10K+</h3>
+        <p>Happy Customers</p>
+    </div>
+
+    <div class="about-trust-box">
+        <h3>100%</h3>
+        <p>Premium Quality</p>
+    </div>
+
+</section>
+
+<!-- MISSION -->
+<section class="about-mission">
+    <div class="about-mission-box">
+        <h2>Our Mission</h2>
+        <p>
+            Our mission is to redefine fashion by combining timeless elegance
+            with modern trends, while maintaining trust and quality.
+        </p>
+    </div>
+</section>
+
+{% endblock %}

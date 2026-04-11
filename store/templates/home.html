@@ -1,0 +1,60 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<!-- HERO -->
+{% load static %}
+<section class="hero">
+    <h2>Elevate Your Everyday Style</h2>
+    <p>Premium • Professional • Quality</p>
+</section>
+
+<!-- PRODUCTS -->
+<section class="container">
+
+    <!-- PRODUCT 1 -->
+    <div class="card">
+        <div class="image-box">
+            <img src="{{ p1.image.url }}" alt="Dress 1">
+        </div>
+        <div class="content">
+            <h2>Proffesional</h2>
+            <p>Our products are thoughtfully crafted with a strong focus on quality, precision, and durability. From the selection of materials to the final finishing touches, every stage of production is carefully monitored to meet high standards. We prioritize comfort, functionality, and long-term usability, ensuring that each item delivers consistent performance over time. Our commitment to quality goes beyond expectations—we aim to create products that not only meet your needs but also build trust and satisfaction with every use.</p>
+<button onclick='location.href="{% url "store:detail" p1.name %}"'>
+    View Product
+</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT 2 -->
+    <div class="card reverse">
+        <div class="image-box">
+            <img src="{{ p2.image.url }}" alt="Dress 2">
+        </div>
+        <div class="content">
+            <h2>Quality</h2>
+            <p>Our designs feature a refined selection of premium color palettes that reflect elegance, depth, and modern sophistication. Each color is carefully chosen to maintain a perfect balance between trend and timeless appeal, allowing our products to stand out while remaining versatile. The richness and consistency of our colors enhance the overall visual experience, giving every product a distinctive and luxurious feel. We believe that the right color does more than decorate—it defines style, mood, and identity.</p>
+            <button onclick='location.href="{% url "store:detail" p2.name %}"'>View Product</button>
+        </div>
+    </div>
+
+    <!-- PRODUCT 3 -->
+    <div class="card">
+        <div class="image-box">
+            <img src="{{ p3.image.url }}" alt="Dress 3">
+        </div>
+        <div class="content">
+            <h2>Premium Color</h2>
+            <p>We uphold a high level of professionalism in every detail of our work, ensuring a smooth and reliable experience for our customers. From planning and design to delivery and support, our approach is structured, transparent, and customer-focused. We value clear communication, timely execution, and consistent service, which helps us maintain strong relationships and trust. Our professional standards are not just about how we operate—they represent our commitment to excellence, responsibility, and continuous improvement.</p>
+            <button onclick='location.href="{% url "store:detail" p3.name %}"'>View Product</button>
+        </div>
+    </div>
+    <div class="content">
+
+            <a href="{% url 'store:product' %}" class="view-btn">View More</a> 
+    </div>
+
+</section>
+
+{% endblock %}
+

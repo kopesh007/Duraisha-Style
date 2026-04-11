@@ -1,0 +1,71 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+{% load static %}
+
+<!-- HERO -->
+<section class="contact-hero">
+    <div class="contact-hero-content">
+        <h2>Contact Us</h2>
+        <p>We’d love to hear from you</p>
+        {% if msg %}
+        <h1>{{msg}}</h1>
+        {% endif %}
+    {% for field in data %}
+        {% if field.errors %}
+        <div>
+            <span>{{ field.label_tag }}</span>
+            {% for error in field.errors %}
+                <span class="text-danger">{{ error | upper }}</span>
+            {% endfor %}
+        </div>
+        {% endif %}
+    {% endfor %}
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section class="contact-container">
+   
+    <!-- LEFT INFO -->
+    <div class="contact-info">
+        <h3>DURAISHA STYLE</h3>
+        <p>25 years of trust and fashion excellence.</p>
+
+        <div class="info-box">
+            <h4>📍 Address</h4>
+            <p>No 4,PJR complex , Anna Bus stand in-side,</p>
+            <p>Maduranthakam Tk ,Chengalpattu Dt, Tamil Nadu, India</p>
+        </div>
+
+        <div class="info-box">
+            <h4>📞 Phone</h4>
+            <p>+91 98765 43210</p>
+        </div>
+
+        <div class="info-box">
+            <h4>✉️ Email</h4>
+            <p>kolearning25@gamil.com</p>
+        </div>
+    </div>
+
+    <!-- RIGHT FORM -->
+    <div class="contact-form">
+        <form method="POST">
+            {% csrf_token %}
+            <h3>Send Message</h3>
+
+            <input type="text" placeholder="Your Name" name="name" value="{{name}}">
+            <input type="email" placeholder="Your Email" name="email" value="{{email}}">
+            <input type="text" placeholder="Subject" name="subject" value="{{subject}}">
+
+            <textarea placeholder="Your Message" rows="5" name="mess" notrequired>{{message}}</textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </div>
+
+</section>
+
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block content %}
+{% load static %}
+<!-- HEADER -->
+<header>
+    <h1>. . . Wear Confidence. Define Your Style . . .</h1>
+    <p>Discover a collection crafted for those who value quality, elegance, and confidence. From timeless designs to modern trends, every piece is made to enhance your personality and stand out effortlessly.</p>
+</header>
+
+<!-- PRODUCT SECTION -->
+<section class="products">
+    {% for i in name %}
+    <!-- PRODUCT -->
+    <div class="product-card">
+        
+        <!-- IMAGE -->
+        <div class="image-box">
+            <img src="{{i.image.url}}" alt="">
+        </div>
+
+        <!-- DETAILS -->
+        <div class="details">
+            <h3>{{i.name}}</h3>
+            <p>{{i.price}}</p>
+            <a href="{% url 'store:detail' i.name %}" class="view-btn">View Product</a>
+        </div>
+
+    </div>
+    {% endfor %}
+
+    
+</section>
+
+{% endblock %}
