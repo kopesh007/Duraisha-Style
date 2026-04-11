@@ -79,16 +79,27 @@ WSGI_APPLICATION = 'our_app.wsgi.application'
 
 
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'PYTHON_DATA',
-        'USER':'root',
-        'PASSWORD':os.getenv("db"),
-        'HOST':'localhost',
-        'PORT':'3306',
+if 'RENDER' in os.environ:
+    # If we are on Render, use a simple SQLite database
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
+else:
+    # If we are on your laptop, keep using MySQL
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'PYTHON_DATA',
+            'USER': 'root',
+            'PASSWORD': os.getenv("db"),
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
+
 
 
 # Password validation
