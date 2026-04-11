@@ -45,7 +45,11 @@ def con(request,price=""):
         if data.is_valid():
 
             msg="Data Has Been Submitted,Our Team Will Reach You"
-            mail(data.cleaned_data["email"],data.cleaned_data["name"])
+            try:
+                mail(data.cleaned_data["email"], data.cleaned_data["name"])
+            except Exception as e:
+                print(f"EMAIL ERROR: {e}") # This will show up in your Render Logs!
+
             
             return render(request,"contact.html",{"msg":msg})
         else:
