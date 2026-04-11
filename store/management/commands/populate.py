@@ -19,6 +19,6 @@ class Command(BaseCommand):
 ,{"name":"about2","price":"₹0","img":"about2.jpeg"}
 ]
         for i in post:
-            posts.objects.create(name=i["name"],price=i["price"],image="products/"+i["img"])
+            posts.objects.get_or_create(name=i["name"],price=i["price"],image="products/"+i["img"])
 
         self.stdout.write(self.style.SUCCESS("Products added successfully"))
