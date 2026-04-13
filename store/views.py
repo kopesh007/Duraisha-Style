@@ -78,7 +78,7 @@ DURAISHA Style
 Team Support
 """
     passward=os.getenv("email")
-
+                                        
     server=smtplib.SMTP("smtp.gmail.com",587)
     server.starttls()
     server.login("kolearning25@gmail.com",passward)

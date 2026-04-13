@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =os.getenv("key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
@@ -81,26 +81,19 @@ WSGI_APPLICATION = 'our_app.wsgi.application'
 
 
 
-if 'RENDER' in os.environ:
-    # If we are on Render, use a simple SQLite database
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': BASE_DIR / 'db.sqlite3',
-        }
+DATABASES = {
+    'default':{
+
+        'ENGINE':'django.db.backends.postgresql',
+        'NAME':'mydb_amcw',
+        'USER':'mydb_amcw_user',
+        'PASSWORD':'T5vYBLAUECh22HN4E1JB1mwiRwL4laHE',
+        'HOST':'dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com',
+        'PORT':'5432',
+
+
     }
-else:
-    # If we are on your laptop, keep using MySQL
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': 'PYTHON_DATA',
-            'USER': 'root',
-            'PASSWORD': os.getenv("db"),
-            'HOST': 'localhost',
-            'PORT': '3306',
-        }
-    }
+}
 
 
 
@@ -147,6 +140,9 @@ STATIC_ROOT= BASE_DIR / "staticfiles"
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
+
+
 
 LOGGING = {
           "version": 1,

@@ -17,6 +17,7 @@ class Command(BaseCommand):
 ,{"name":"Golden Glow Kurti","price":"₹200","img":"i10.jpeg"}
 ,{"name":"about1","price":"₹0","img":"about1.jpeg"}
 ,{"name":"about2","price":"₹0","img":"about2.jpeg"}
+,{"name":"BOYYYY","price":"₹300","img":"about2.jpeg"}
 ]
         for i in post:
             posts.objects.get_or_create(name=i["name"],price=i["price"],image="products/"+i["img"])
