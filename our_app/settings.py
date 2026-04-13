@@ -27,7 +27,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY =os.getenv("key")
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -90,6 +90,8 @@ DATABASES = {
         'PASSWORD':os.getenv("db"),
         'HOST':'dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com',
         'PORT':'5432',
+        'OPTIONS':{'sslmode':'require',
+        }
 
 
     }
