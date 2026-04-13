@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'our_app.wsgi.application'
 # https://docs.djangoproject.com/en/6.0/ref/settings/#databases
 
 
-
-DATABASES = {
-    'default':{
+if 'RENDER' in os.environ:
+    DATABASES = {
+        'default':{
 
         'ENGINE':'django.db.backends.postgresql',
         'NAME':'mydb_amcw',
@@ -91,11 +91,22 @@ DATABASES = {
         'HOST':'dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com',
         'PORT':'5432',
         'OPTIONS':{'sslmode':'require',
+            }
+
+
         }
-
-
     }
-}
+else:
+    DATABASES={
+        'default':{
+            'ENGINE':'django.db.backends.mysql',
+            'NAME':'PYTHON',
+            'USER':'root',
+            'PASSWORD':os.getenv("sql"),
+            'HOST':'localhost',
+            'PORT':'3306',       
+            }
+    }
 
 
 
