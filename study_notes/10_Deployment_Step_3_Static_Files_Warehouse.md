@@ -27,3 +27,9 @@ We installed a helper called **WhiteNoise**. It sits next to Gunicorn and says: 
 
 ### 💡 Pro Tip:
 Always run `collectstatic` locally before you push to make sure everything is ready in your warehouse.
+
+---
+
+### ⏭️ Next Chapter:
+To understand the "Teamwork" between your Warehouse and the Executive Chef, read:
+**[11_Gunicorn_The_Production_Engine.md](file:///k:/DJANGO-PROJECT/our_app/study_notes/11_Gunicorn_The_Production_Engine.md)**

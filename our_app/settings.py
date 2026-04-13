@@ -87,7 +87,7 @@ DATABASES = {
         'ENGINE':'django.db.backends.postgresql',
         'NAME':'mydb_amcw',
         'USER':'mydb_amcw_user',
-        'PASSWORD':'T5vYBLAUECh22HN4E1JB1mwiRwL4laHE',
+        'PASSWORD':os.getenv("db"),
         'HOST':'dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com',
         'PORT':'5432',
 
