@@ -91,7 +91,7 @@ if 'RENDER' in os.environ:
         'HOST':'dpg-d7ee56cvikkc73enoqb0-a.oregon-postgres.render.com',
         'PORT':'5432',
         'OPTIONS':{'sslmode':'require',
-            }
+            },
 
 
         }
