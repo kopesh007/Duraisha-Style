@@ -8,5 +8,10 @@ class posts(models.Model):
 
     def __str__(self):
         return self.name
+class user_data(models.Model):
+    name=models.CharField(max_length=100)
+    email=models.CharField(max_length=100)
+    interest=models.CharField(max_length=300)
+    message=models.CharField( default = "nothing", max_length=500)
 
 # Create your models here.

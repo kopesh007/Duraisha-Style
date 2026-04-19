@@ -5,7 +5,7 @@ from .import form
 import os
 from dotenv import load_dotenv
 load_dotenv()
-from store.models import posts 
+from store.models import posts , user_data
 import smtplib
 
 
@@ -46,7 +46,7 @@ def con(request,price=""):
 
             msg="Data Has Been Submitted,Our Team Will Reach You"
             try:
-                mail(data.cleaned_data["email"], data.cleaned_data["name"])
+                storing(data.cleaned_data)
             except Exception as e:
                 print(f"EMAIL ERROR: {e}") # This will show up in your Render Logs!
 
@@ -61,27 +61,7 @@ def con(request,price=""):
 
     return render(request,"contact.html")
     
-def mail(email,name):
+def storing(data):
+    user_data.objects.create(name=data["name"],email=data["email"],interest=data["subject"],message=data["mess"])
 
-    message = f"""Subject: From DURAISHA Style
-
-Dear {name},
-
-Thank you for your interest in DURAISHA Style.
-
-We truly appreciate your time and effort in reaching out to us. Our team is currently reviewing your request, and we will get back to you shortly with more details.
-
-If you have any further questions, feel free to reply to this email.
-
-Best regards,  
-DURAISHA Style  
-Team Support
-"""
-    passward=os.getenv("email")
-                                        
-    server=smtplib.SMTP("smtp.gmail.com",587)
-    server.starttls()
-    server.login("kolearning25@gmail.com",passward)
-    server.sendmail("kolearning25@gmail.com",email,message)
-    server.quit()
 
